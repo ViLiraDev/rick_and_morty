@@ -1,0 +1,67 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+  }
+  
+  .cardImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+  
+  .cardImage img {
+    width: 60%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+
+  }
+  
+  .cardInfo {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    padding: 2rem;
+  }
+  
+  .cardInfo h1 {
+    font-family: "Roboto", sans-serif; /* Cambiar la fuente a Roboto o alguna otra que desees */
+    font-size: 3rem; /* Tamaño de la fuente */
+    font-weight: bold; /* Peso de la fuente, en este caso negrita */
+    color: #333; /* Color del texto */
+    text-align: center; /* Centrar el texto horizontalmente */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .cardInfo p {
+    text-shadow: 1px 1px 10px rgba(169, 214, 252, 0.993);
+    color: #333333;
+    position: relative;
+    font-family: "Futura", sans-serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .cardInfoLabel {
+    position: relative;
+    left: -80px;
+    font-size: 2.5rem;
+    font-style: italic;
+  }
