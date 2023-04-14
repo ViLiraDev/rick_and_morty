@@ -3,12 +3,18 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import styles from "./detail.module.css";
 
+
+const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
+const API_KEY = '53e7e3c7f02a.3fbaccb075d054f41961'
+
+
+
 const Detail = () => {
     const { detailId } = useParams();
     const [character, setCharacter] = useState({});
 
     useEffect(() => {
-        axios(`https://rickandmortyapi.com/api/character/${detailId}`).then(({ data }) => {
+        axios(`${URL_BASE}/${detailId}?key=${API_KEY}`).then(({ data }) => {
            if (data.name) {
               setCharacter(data);
            } else {

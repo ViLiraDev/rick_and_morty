@@ -10,6 +10,9 @@ import Form from './components/Form/Form';
 import Favorites from "./components/Favorites/Favorites";
 
 
+const URL_BASE = 'https://be-a-rym.up.railway.app/api/character';
+const API_KEY = '53e7e3c7f02a.3fbaccb075d054f41961';
+
 function App() {
 
    const [characters,setCharacters] = useState([]);
@@ -33,7 +36,7 @@ function App() {
 
 
    function onSearch(id) {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+      axios(`${URL_BASE}/${id}?key=${API_KEY}`).then(({ data }) => {
          if (data.name) {
          let exist = characters.find((ch)=> ch.id===data.id)
          if(exist){
@@ -48,8 +51,22 @@ function App() {
       });
    }
 
+   // const onSearch = (id) => {
+   //    axios(${URL_BASE}/${id}?key=${API_KEY})
+   //    .then(response => response.data)
+   //    .then((data) => {
+   //       if (data.name) {
+   //          setCharacters((oldChars) => [...oldChars, data]);
+   //       } else {
+   //          window.alert('¡No hay personajes con este ID!');
+   //       }
+   //    });
+   // }
+
+
    const onClose = (id) => {
-      const charactersFiltered = characters.filter(character => character.id !== Number(id))
+      console.log(id)
+      const charactersFiltered = characters.filter(character => character.id !== id)
       setCharacters(charactersFiltered)
    }
 
